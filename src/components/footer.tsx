@@ -1,11 +1,16 @@
+import { Plus } from "lucide-react"
+
 export function Footer() {
   return (
-    <footer id="about" className="bg-gray-900 text-white py-16">
+    <footer id="about" className="bg-black border-t border-gray-800 text-white py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold tracking-tight">Paranto</h3>
+            <div className="flex items-center gap-2">
+              <Plus className="h-7 w-7" strokeWidth={2.5} />
+              <h3 className="text-2xl font-bold tracking-tight">Paranto</h3>
+            </div>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
               Evidence-based digital therapy for non-specific low back pain.
               Designed by clinicians, built for patients.
@@ -19,18 +24,23 @@ export function Footer() {
             </h4>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="#features" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Features
+                <a href="#problem" className="text-gray-300 hover:text-white text-sm transition-colors">
+                  The Problem
                 </a>
               </li>
               <li>
-                <a href="#how-it-works" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  How It Works
+                <a href="#solution" className="text-gray-300 hover:text-white text-sm transition-colors">
+                  Our Solution
                 </a>
               </li>
               <li>
                 <a href="#evidence" className="text-gray-300 hover:text-white text-sm transition-colors">
-                  Evidence
+                  Market
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="text-gray-300 hover:text-white text-sm transition-colors">
+                  Pricing
                 </a>
               </li>
             </ul>

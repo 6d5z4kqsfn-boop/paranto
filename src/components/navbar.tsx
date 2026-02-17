@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Plus } from "lucide-react"
+import { LiquidButton } from "@/components/ui/liquid-glass-button"
 
 export function Navbar() {
   // Track whether user has scrolled past the hero section
@@ -18,10 +19,10 @@ export function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Evidence", href: "#evidence" },
-    { label: "About", href: "#about" },
+    { label: "Problem", href: "#problem" },
+    { label: "Solution", href: "#solution" },
+    { label: "Market", href: "#evidence" },
+    { label: "Pricing", href: "#pricing" },
   ]
 
   return (
@@ -34,14 +35,17 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo / brand name */}
+          {/* Logo - medical cross inspired by Paranto logo */}
           <a
             href="#"
-            className={`text-2xl font-bold tracking-tight transition-colors ${
+            className={`flex items-center gap-2 transition-colors ${
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            Paranto
+            <Plus className="h-7 w-7" strokeWidth={2.5} />
+            <span className="text-2xl font-bold tracking-tight">
+              Paranto
+            </span>
           </a>
 
           {/* Desktop navigation links */}
@@ -69,16 +73,9 @@ export function Navbar() {
             >
               Sign In
             </a>
-            <a
-              href="#"
-              className={`rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
-                scrolled
-                  ? "bg-gray-900 text-white hover:bg-gray-800"
-                  : "bg-white text-gray-900 hover:bg-white/90"
-              }`}
-            >
+            <LiquidButton size="sm" className={`font-semibold ${scrolled ? "text-gray-900" : "text-white"}`}>
               Get Started
-            </a>
+            </LiquidButton>
           </div>
 
           {/* Mobile menu button */}
@@ -107,12 +104,9 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#"
-              className="block w-full rounded-full bg-white px-6 py-2.5 text-center text-sm font-medium text-gray-900"
-            >
+            <LiquidButton size="default" className="text-white font-semibold">
               Get Started
-            </a>
+            </LiquidButton>
           </div>
         )}
       </div>
