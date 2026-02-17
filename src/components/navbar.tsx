@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Plus } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { ParantoLogo } from "@/components/paranto-logo"
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
 
 export function Navbar() {
@@ -42,7 +43,7 @@ export function Navbar() {
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            <Plus className="h-7 w-7" strokeWidth={2.5} />
+            <ParantoLogo className="h-8 w-8" />
             <span className="text-2xl font-bold tracking-tight">
               Paranto
             </span>

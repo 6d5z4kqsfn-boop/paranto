@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react"
+import { ParantoLogo } from "@/components/paranto-logo"
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <Plus className="h-7 w-7" strokeWidth={2.5} />
+              <ParantoLogo className="h-8 w-8" />
               <h3 className="text-2xl font-bold tracking-tight">Paranto</h3>
             </div>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
