@@ -22,6 +22,7 @@ export function Navbar() {
   const navLinks = [
     { label: "Problem", href: "#problem" },
     { label: "Solution", href: "#solution" },
+    { label: "Status", href: "#status" },
     { label: "Market", href: "#evidence" },
     { label: "Pricing", href: "#pricing" },
   ]
