@@ -1,4 +1,5 @@
 import { ClipboardList, Sliders, TrendingUp } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 // Three-step process data
 const steps = [
@@ -30,19 +31,22 @@ export function HowItWorks() {
     <section id="how-it-works" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 font-serif">
-            How it works
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Three simple steps to start your evidence-based recovery journey.
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 font-serif">
+              How it works
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+              Three simple steps to start your evidence-based recovery journey.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Three-step horizontal layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {steps.map((step) => (
-            <div key={step.title} className="text-center">
+          {steps.map((step, i) => (
+            <ScrollReveal key={step.title} direction="up" delay={i * 0.15}>
+            <div className="text-center">
               {/* Step number */}
               <span className="text-sm font-mono text-teal-600 font-semibold">
                 {step.number}
@@ -61,6 +65,7 @@ export function HowItWorks() {
                 {step.description}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

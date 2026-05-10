@@ -8,6 +8,7 @@ import { Pricing } from "@/components/pricing";
 import { Advantages } from "@/components/advantages";
 import { HowItWorks } from "@/components/how-it-works";
 import { CurrentStatus } from "@/components/current-status";
+import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <CurrentStatus />
       <Pricing />
       <Advantages />
+      <FAQ />
       <Footer />
     </>
   );

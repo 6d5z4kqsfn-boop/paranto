@@ -1,4 +1,5 @@
 import { AlertCircle, Building2, Puzzle } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 // Problem cards from pitch deck - translated to English
 const problems = [
@@ -28,23 +29,25 @@ export function Problem() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left side - section title */}
-          <div>
-            <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
-              The Problem
-            </p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif leading-tight">
-              Low back pain disrupts daily life and work capacity
-            </h2>
-            <p className="mt-6 text-lg text-gray-400 leading-relaxed">
-              But the care pathway is fragmented.
-            </p>
-          </div>
+          <ScrollReveal direction="right">
+            <div>
+              <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
+                The Problem
+              </p>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif leading-tight">
+                Low back pain disrupts daily life and work capacity
+              </h2>
+              <p className="mt-6 text-lg text-gray-400 leading-relaxed">
+                But the care pathway is fragmented.
+              </p>
+            </div>
+          </ScrollReveal>
 
           {/* Right side - problem cards */}
           <div className="space-y-8">
-            {problems.map((problem) => (
+            {problems.map((problem, i) => (
+              <ScrollReveal key={problem.title} direction="left" delay={i * 0.12}>
               <div
-                key={problem.title}
                 className="flex gap-5 rounded-xl border border-gray-800 bg-gray-900/50 p-6"
               >
                 {/* Teal icon circle (inspired by the pitch deck's teal dots) */}
@@ -60,6 +63,7 @@ export function Problem() {
                   </p>
                 </div>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

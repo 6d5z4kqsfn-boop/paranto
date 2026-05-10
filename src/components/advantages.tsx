@@ -1,5 +1,6 @@
 import { Users, FlaskConical, Scaling, Lightbulb } from "lucide-react"
 import Image from "next/image"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 // Competitive advantages from pitch deck - translated to English
 const advantages = [
@@ -38,22 +39,24 @@ export function Advantages() {
     <section className="bg-gray-950 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
-            Why Paranto
-          </p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif">
-            Competitive advantages
-          </h2>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
+              Why Paranto
+            </p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif">
+              Competitive advantages
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* 2x2 grid with center image */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Left column */}
           <div className="space-y-8">
-            {advantages.slice(0, 2).map((adv) => (
+            {advantages.slice(0, 2).map((adv, i) => (
+              <ScrollReveal key={adv.title} direction="right" delay={i * 0.15}>
               <div
-                key={adv.title}
                 className="rounded-xl border border-gray-800 bg-gray-900/50 p-6"
               >
                 <adv.icon className="h-6 w-6 text-teal-400 mb-3" />
@@ -64,6 +67,7 @@ export function Advantages() {
                   {adv.description}
                 </p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -79,9 +83,9 @@ export function Advantages() {
 
           {/* Right column */}
           <div className="space-y-8">
-            {advantages.slice(2, 4).map((adv) => (
+            {advantages.slice(2, 4).map((adv, i) => (
+              <ScrollReveal key={adv.title} direction="left" delay={i * 0.15}>
               <div
-                key={adv.title}
                 className="rounded-xl border border-gray-800 bg-gray-900/50 p-6"
               >
                 <adv.icon className="h-6 w-6 text-teal-400 mb-3" />
@@ -92,6 +96,7 @@ export function Advantages() {
                   {adv.description}
                 </p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

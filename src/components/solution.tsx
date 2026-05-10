@@ -2,6 +2,7 @@
 
 import { Route, Smartphone, BookOpen } from "lucide-react"
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 // Solution pillars from pitch deck - translated to English
 const solutions = [
@@ -30,19 +31,22 @@ export function Solution() {
     <section id="solution" className="bg-black py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section heading */}
-        <div className="mb-16">
-          <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
-            Our Solution
-          </p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif leading-tight max-w-2xl">
-            Digital therapy that fits your life
-          </h2>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="mb-16">
+            <p className="text-sm font-mono text-teal-400 font-semibold uppercase tracking-wider">
+              Our Solution
+            </p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-white font-serif leading-tight max-w-2xl">
+              Digital therapy that fits your life
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* Three solution columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {solutions.map((solution) => (
-            <div key={solution.title} className="group">
+          {solutions.map((solution, i) => (
+            <ScrollReveal key={solution.title} direction="up" delay={i * 0.12}>
+            <div className="group">
               {/* Teal accent dot */}
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-600 shadow-lg shadow-teal-500/20">
                 <solution.icon className="h-6 w-6 text-white" />
@@ -55,6 +59,7 @@ export function Solution() {
                 {solution.description}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
 
